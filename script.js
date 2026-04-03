@@ -16,7 +16,9 @@ function renderTasks(){
                    for (let i = 0; i < userTasks.length; i++) {
                     let task = userTasks[i]; 
                     let li = document.createElement("li");
-                    li.textContent = `${task.name} (${task.xp} XP)`;
+                    let taskText = document.createElement("span");
+                    taskText.className = "task-text";
+                    taskText.textContent = `${task.name} (${task.xp} XP)`;
                     let completeButton = document.createElement("button");
                     completeButton.textContent = "done "
                     completeButton.className = "complete-btn";
@@ -35,9 +37,17 @@ function renderTasks(){
                         renderXP();
                         renderLevel();
                     })
-                       li.appendChild(completeButton);
-                       li.appendChild(deleteBtn);
-                       allTasksList.appendChild(li);
+                          if (task.completed) {
+                             li.classList.add('completed');
+                             li.appendChild(taskText);
+                             li.appendChild(deleteBtn);
+                             allTasksList.appendChild(li);
+                         }else{
+                            li.appendChild(taskText);
+                              li.appendChild(completeButton);
+                              li.appendChild(deleteBtn);
+                              allTasksList.appendChild(li);
+                         }
                     }
  
     }
