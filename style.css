@@ -1,35 +1,8 @@
 /* ===== ШРИФТЫ (не трогай если работают) ===== */
-@font-face {
-  font-family: 'ulta';       
-  src: url('fonts/Ulta-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'abnaya';   
-  src: url('fonts/AbnayaLibre-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'syne';   
-  src: url('fonts/SyneMono-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 @font-face {
     font-family: 'pixelify';
     src: url('fonts/PixelifySans-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 1000;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'quicksand';
-    src: url('fonts/Quicksand-VariableFont_wght.ttf') format('truetype');
     font-weight: 100 1000;
     font-style: normal;
 }
@@ -228,17 +201,27 @@ body {
     transform: scale(0.95);
 }
 
+#all-tasks-list li.completed {
+    opacity: 0.7;
+    border-left-color: rgb(188, 123, 146);
+}
+#all-tasks-list li.completed .task-text {
+    text-decoration: line-through;
+    color: rgb(100, 100, 100);
+}
+
 /* ===== СЧЁТЧИКИ (уровень и XP) ===== */
 #show-level,
 #show-xp {
     display: inline-block;
     padding: 12px 25px;
     margin: 10px 5px;
-    background: linear-gradient(135deg, rgba(176, 255, 179, 0.885), rgba(76, 218, 78, 0.69));
+    background: linear-gradient(135deg, rgba(141, 231, 144, 0.885), rgba(88, 239, 91, 0.855));
     border: 2px solid rgba(166, 255, 158, 0.5);
     border-radius: 12px;
     font-family: 'pixelify', monospace;
     font-size: 20px;
+    line-gap-override: 2px;
     color: rgb(255, 255, 255);
     font-weight: 600;
     text-align: center;
