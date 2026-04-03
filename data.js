@@ -8,13 +8,15 @@ let userLevel = "";
 //ADD TASK
 function addTask(task, xp){
     let newObject ={}
-    if(task !== null && xp > 0){
+    if(task !== null && xp > 0 && xp <= 20){
         newObject ={
             name: task,
             xp: xp,
             completed: false
         }
         userTasks.push(newObject);
+    }else{
+        alert("please, write the task and xp must be under 20(")
     }
     saveData()
 }
@@ -24,7 +26,6 @@ function completeTask(index){
     if(userTasks[index]){
         userTasks[index].completed = true;
         totalXp = totalXp + userTasks[index].xp;
-        deleteTask(index);
     }
     saveData();
     return totalXp;
@@ -41,11 +42,14 @@ function deleteTask(index){
 
 //GET LEVEL
 function getLevel(){
-        if (totalXp < 100) {
+    if(totalXp == 67){
+        return 67
+    }
+       else if (totalXp < 200) {
         return 1;
-    } else if (totalXp >=100 && totalXp < 200) {
+    } else if (totalXp >=200 && totalXp < 350) {
         return 2;
-    } else if (totalXp>= 200 && totalXp < 350) {
+    } else if (totalXp>= 350 && totalXp < 5000) {
         return 3;
     } else {
         return 4;
@@ -54,14 +58,17 @@ function getLevel(){
 
 //GET MESSAGE LEVEL
 function getLevelName(level){
-     if (level ==  1) {
+    if(level == 67){
+        return "SIIIX SEEEEVVVENNN!!!!"
+    }
+     else if (level ==  1) {
         return "begginer. Keep going!";
     } else if (level ==  2) {
         return "pre-focusing master. Your on the track!";
     } else if (level ==  3) {
         return "focus pro!!. Well done, however u can better, move forward";
     } else {
-        return "you are the focus master. But its still not end...";
+        return "you are the focus master. But it's still not the end...";
     }
 }
 
