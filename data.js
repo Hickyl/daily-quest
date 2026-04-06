@@ -16,7 +16,7 @@ function addTask(task, xp){
         }
         userTasks.push(newObject);
     }else{
-        alert("please, write the task and xp must be under 20(")
+        alert("please, write the task and xp (must be under 20()")
     }
     saveData()
 }
