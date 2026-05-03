@@ -71,6 +71,7 @@ body {
 #input-xp {
     margin: 20px 0;
     display: inline-block;
+    justify-content: center;
     padding: 12px 20px;
     margin: 5px;
     font-family: 'gothic', monospace;
@@ -137,10 +138,10 @@ body {
 
 /* ===== TASKS LIST COTAINER ===== */
 #all-tasks-list {
-    background-color: rgba(255, 240, 249, 0.95);
-    border: 3px solid rgba(188, 123, 146, 0.3);
+    background-color: rgba(240, 248, 255, 0.95);
+    border: 3px solid rgba(123, 133, 188, 0.3);
     border-radius: 20px;
-    font-family: 'mich', monospace;
+    font-family: 'gothic', monospace;
     margin: 20px 30px;
     padding: 20px;
     min-height: 100px;
